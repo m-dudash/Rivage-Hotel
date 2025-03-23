@@ -276,6 +276,14 @@ td {
     font-size: 1.5em;
   }
 }
+.review {
+    width: 100%;
+    padding: 70px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
 
 @media (max-width: 320px) {
   .centered {
