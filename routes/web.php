@@ -15,8 +15,13 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return App\Models\Faq::all();
 });
+Route::get('/thanks', function () {
+    return view('thanks');
+})->name('thanks');
 
 Route::get('/home',[HomeController::class, 'index'])->name('home');
+Route::post('/home', [HomeController::class, 'store'])->name('question.store');
+
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviews');

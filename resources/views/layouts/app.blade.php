@@ -28,6 +28,8 @@
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     @elseif(Route::currentRouteName() == 'faq.edit')
         <link href="{{ asset('css/faq.css') }}" rel="stylesheet">
+    @elseif(Route::currentRouteName() == 'thanks')
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     @endif
 
 </head>

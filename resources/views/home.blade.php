@@ -186,13 +186,14 @@
     <!--FORMULAR -->
     <div class="otazky">
         <p class="thm">MATE OTAZKY?</p>
-        <form action="engineOOP.php" id="otazky" method="post">
+        <form action="{{route('question.store')}}" id="otazky" method="post">
+            @csrf
             <div>
                 <label for="meno">MENO:</label>
-                <input class="inp" type="text" id="meno" name="meno" required />
+                <input class="inp" type="text" id="meno" name="name" required />
                 <br /><br /><br />
                 <label for="mail">MAIL:</label>
-                <input class="inp" type="email" id="mail" name="mail" required />
+                <input class="inp" type="email" id="mail" name="email" required />
                 <br /><br /><br />
                 <label for="mobile">ČÍSLO:</label>
                 <input class="inp" type="tel" id="mobile" name="mobile" required />
