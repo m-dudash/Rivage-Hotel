@@ -17,8 +17,17 @@
                 <!-- Кнопки Edit и Delete -->
 
                 <div class="btn-group" role="group">
-                    <button type="button" style="background-color: white; color: #500505;margin-right: 20px; margin-left: 20px; margin-bottom: 5px" onclick="editQna()">Edit</button>
-                    <button type="button" style="margin-right: 20px; margin-left: 20px; margin-bottom: 5px;  color: aliceblue" onclick="deleteQna()">Delete</button>
+
+                        <button type="submit" style="background-color: white; color: #500505;margin-right: 20px; margin-left: 20px; margin-bottom: 5px" >
+                            <a href="{{route('faq.edit', $item)}}" >Edit</a>
+                        </button>
+
+
+                    <form action="{{route('faq.delete', $item)}}" id="del" method="post">
+                        @csrf
+                        @method('DELETE')
+                    <button type="submit" style="margin-right: 20px; margin-left: 20px; margin-bottom: 5px;  color: aliceblue">Delete</button>
+                    </form>
                 </div>
 
             </h2>
@@ -37,7 +46,8 @@
 
 <br><br><br>
 <div class="otazky">
-    <form action="faqCreate.php" id="otazky" method="post">
+    <form action="{{route('faq.store')}}" id="otazky" method="post">
+        @csrf
         <br>
         <div>
             <label for="question">NEW QUESTION:</label>

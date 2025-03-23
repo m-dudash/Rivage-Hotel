@@ -26,6 +26,8 @@
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     @elseif(Route::currentRouteName() == 'profile')
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    @elseif(Route::currentRouteName() == 'faq.edit')
+        <link href="{{ asset('css/faq.css') }}" rel="stylesheet">
     @endif
 
 </head>
@@ -36,7 +38,7 @@
         style="position: fixed; z-index: 1; width: 100%"
     >
         <div class="container-fluid">
-            <a href="main.php" class="nav-logo">
+            <a href="{{route('home')}}" class="nav-logo">
                 <img src="{{asset('images/logo.png')}}" alt="logo" class="nav-logo" />
             </a>
             <button
