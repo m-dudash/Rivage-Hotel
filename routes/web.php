@@ -22,4 +22,4 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviews');
 Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::get('/profile', [LoginController::class, 'index'])->name('profile');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');

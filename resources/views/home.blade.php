@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-
+@section('content')
     <div class="container" id="main" style="padding-top: 40px">
         <div class="centered">THE BEST AMSTERDAM HOTEL</div>
         <img src="{{asset('images/banner.png')}}" alt="Amsterdam" />
@@ -211,4 +211,4 @@
     </p>
     <br /><br /><br /><br /><br /><br /><br /><br />
 </div>
-
+@endsection(content)
