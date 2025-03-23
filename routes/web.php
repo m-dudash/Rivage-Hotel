@@ -17,3 +17,9 @@ Route::get('/test', function () {
 });
 
 Route::get('/home',[HomeController::class, 'index'])->name('home');
+Route::get('/faq',[FaqController::class, 'index'])->name('faq');
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviews');
+Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/profile', [LoginController::class, 'index'])->name('profile');

@@ -3,10 +3,10 @@
 
     <div class="container" id="main" style="padding-top: 40px">
         <div class="centered">THE BEST AMSTERDAM HOTEL</div>
-        <img src="img/banner.png" alt="Amsterdam" />
+        <img src="{{asset('images/banner.png')}}" alt="Amsterdam" />
     </div>
     <div class="CRvg" id="CRvg">
-        <img src="img/Rvg.png" alt="Rivage Hotel" class="Rvg" />
+        <img src="{{asset('images/Rvg.png')}}" alt="Rivage Hotel" class="Rvg" />
         <hr />
         <br />
         <div class="pv">
@@ -23,7 +23,7 @@
     <p class="thm" id="about">O nás</p>
     <br />
     <div style="display: flex">
-        <img src="img/receptionS.png" alt="Reception" class="side-img" />
+        <img src="{{asset('images/receptionS.png')}}" alt="Reception" class="side-img" />
         <div style="flex-grow: 1">
             <p class="o-nas">
                 <span class="vp"> S </span>me luxusný hotel v centre Amsterdamu,
@@ -47,15 +47,15 @@
     <div class="galeria">
         <div class="card" style="min-width: 540px">
             <label>Modern</label>
-            <img src="img/room.png" class="img-fluid rounded-start" alt="..." />
+            <img src="{{asset('images/room.png')}}" class="img-fluid rounded-start" alt="..." />
         </div>
         <div class="card" style="min-width: 540px">
             <label>Spacious</label>
-            <img src="img/bath.png" class="img-fluid rounded-start" alt="..." />
+            <img src="{{asset('images/bath.png')}}" class="img-fluid rounded-start" alt="..." />
         </div>
         <div class="card" style="min-width: 540px">
             <label>Classical</label>
-            <img src="img/hall.png" class="img-fluid rounded-start" alt="..." />
+            <img src="{{asset('images/hall.png')}}" class="img-fluid rounded-start" alt="..." />
         </div>
     </div>
 
@@ -77,19 +77,19 @@
     >
         <div class="carousel-inner" style="width: 80%; margin-left: 50px">
             <div class="carousel-item active" data-bs-interval="1000">
-                <img src="img/rev1.png" class="d-block w-100" alt="..." />
+                <img src="{{asset('images/rev1.png')}}" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="img/rev20.png" class="d-block w-100" alt="..." />
+                <img src="{{asset('images/rev20.png')}}" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="img/rev4.png" class="d-block w-100" alt="..." />
+                <img src="{{asset('images/rev4.png')}}" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="img/rev3.png" class="d-block w-100" alt="..." />
+                <img src="{{asset('images/rev3.png')}}" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="img/rev5.png" class="d-block w-100" alt="..." />
+                <img src="{{asset('images/rev5.png')}}" class="d-block w-100" alt="..." />
             </div>
         </div>
         <button
