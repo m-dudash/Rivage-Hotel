@@ -61,7 +61,7 @@
 
     <br /><br />
     <div style="display: flex; justify-content: center">
-        <a href="gallery.php" target="_blank"
+        <a href="{{route('gallery')}}" target="_blank"
         ><button class="more">MORE</button>
         </a>
     </div>
@@ -115,10 +115,10 @@
     <br /><br />
     <!-- KREATIVNE - NAPISAT REVIEW-->
     <div style="display: flex; justify-content: center">
-        <a href="reviews.php" target="_blank" class="mr-2">
+        <a href="{{route('reviews')}}" target="_blank" class="mr-2">
             <button class="more">MORE</button>
         </a>
-
+        <button class="more" data-bs-toggle="modal" data-bs-target="#writeReviewModal">WRITE REVIEW</button>
     </div>
 
     <div id="writeReviewModal" class="modal" tabindex="-1">
@@ -129,12 +129,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="reviewEngine.php" method="post">
+                    <form action="{{route('reviews.store')}}" method="post">
+                        @csrf
                         <div class="mb-3">
-                            <label for="reviewText" style="font-family: 'Montserrat'; font-weight: 100; font-size: 1.2em">
+                            <label for="content" style="font-family: 'Montserrat'; font-weight: 100; font-size: 1.2em">
                                 <p><i>Napíšte recenziu svojho pobytu v Rivage Hotel</i></p>
                             </label>
-                            <textarea class="form-control" id="reviewText" name="reviewText" rows="7" required></textarea>
+                            <textarea class="form-control" id="reviewText" name="content" rows="7" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label style="font-family: 'Montserrat'; font-weight: 100; font-size: 1.2em">Hodnotenie (1-10):</label>
@@ -182,7 +183,9 @@
     <hr />
     <br />
     <br /><br /><br /><br />
-    <script src="script.js"></script>
+    <script src="{{asset('js/script.js')}}"></script>
+
+
     <!--FORMULAR -->
     <div class="otazky">
         <p class="thm">MATE OTAZKY?</p>

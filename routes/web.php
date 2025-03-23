@@ -23,7 +23,6 @@ Route::get('/home',[HomeController::class, 'index'])->name('home');
 Route::post('/home', [HomeController::class, 'store'])->name('question.store');
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
-Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviews');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
@@ -35,3 +34,6 @@ Route::get('/faq/{item}/edit', [FaqController::class, 'edit'])->name('faq.edit')
 
 Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
 Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
+
+Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviews');
+Route::post('/reviews', [ReviewsController::class, 'store'])->name('reviews.store');
