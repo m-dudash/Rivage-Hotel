@@ -52,16 +52,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="main.php">|&nbsp;O&nbsp;nás</a>
-                    <a class="nav-link" aria-current="page" href="gallery.php">|&nbsp;Galéria</a>
-                    <a class="nav-link" aria-current="page" href="reviews.php">|&nbsp;Recenzie</a>
-                    <a class="nav-link" aria-current="page" href="faq.php">|&nbsp;FAQ</a>
+                    <a class="nav-link" aria-current="page" href="{{route('home')}}">|&nbsp;O&nbsp;nás</a>
+                    <a class="nav-link" aria-current="page" href="{{route('gallery')}}">|&nbsp;Galéria</a>
+                    <a class="nav-link" aria-current="page" href="{{route('reviews')}}">|&nbsp;Recenzie</a>
+                    <a class="nav-link" aria-current="page" href="{{route('faq')}}">|&nbsp;FAQ</a>
 
                     <?php
-                    $login_link = 'test';
+                    $login_link = 'Profile';
                     echo $login_link; ?>
                     <span></span>
-                    <a aria-current="page" href="reservation.php" class="nav-link">
+                    <a aria-current="page" href="{{route('reservation')}}" class="nav-link">
                         <span class="RB" style="position: absolute; right: 7%">| Reservation</span>
                     </a>
                 </div>
@@ -84,11 +84,12 @@
         <p>D. Portashka</p>
     </div>
     <div class="foot-a">
-        <a href="#reviews">|&nbsp;Recenzie</a>
-        <a href="#about">|&nbsp;O&nbsp;nás</a>
-        <a href="gallery.php" target="_blank">|&nbsp;Galéria</a>
-        <a href="faq.html">|&nbsp;FAQ</a>
+        <a href="{{route('reviews')}}">|&nbsp;Recenzie</a>
+        <a href="{{route('home')}}">|&nbsp;O&nbsp;nás</a>
+        <a href="{{route('gallery')}}" target="_blank">|&nbsp;Galéria</a>
+        <a href="{{route('faq')}}">|&nbsp;FAQ</a>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

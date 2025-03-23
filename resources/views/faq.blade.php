@@ -8,26 +8,29 @@
 <br /><br><br>
 <!-- Код для вывода вопросов и ответов -->
 <div class="accordion" id="accordionExample">
+    @foreach($faq as $item)
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{$item->id}}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$item->id}}" aria-expanded="false" aria-controls="collapse{{$item->id}}">
+                    {{$item->question}}
+                </button>
+                <!-- Кнопки Edit и Delete -->
 
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="heading1">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                    QUESTION
-            </button>
-            <!-- Кнопки Edit и Delete -->
+                <div class="btn-group" role="group">
+                    <button type="button" style="background-color: white; color: #500505;margin-right: 20px; margin-left: 20px; margin-bottom: 5px" onclick="editQna()">Edit</button>
+                    <button type="button" style="margin-right: 20px; margin-left: 20px; margin-bottom: 5px;  color: aliceblue" onclick="deleteQna()">Delete</button>
+                </div>
 
-            <div class="btn-group" role="group">
-                <button type="button" style="background-color: white; color: #500505;margin-right: 20px; margin-left: 20px; margin-bottom: 5px" onclick="editQna()">Edit</button>
-                <button type="button" style="margin-right: 20px; margin-left: 20px; margin-bottom: 5px;  color: aliceblue" onclick="deleteQna()">Delete</button>
-            </div>
-
-        </h2>
-        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                    ANSWER
+            </h2>
+            <div id="collapse{{$item->id}}" class="accordion-collapse collapse" aria-labelledby="heading{{$item->id}}" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    {{$item->answer}}
+                </div>
             </div>
         </div>
-    </div>
+
+    @endforeach
+
 
 </div>
 <!-- Форма для новых вопросов -->
