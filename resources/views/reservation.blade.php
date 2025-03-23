@@ -11,12 +11,13 @@
             <div class="centered" style="top: 16vw">LARGE LUXE</div>
             <img src="{{asset('images/reservation/img4.png')}}" alt="Amsterdam" />
             <div class="details">
-                <form action="reservationEngine.php" method="post">
+                <form action="{{route('reservation.store')}}" method="post">
+                    @csrf
                     <div style="display: flex; flex-direction: column">
                         <label for="name">MENO HLAVNÉHO HOSŤA: </label>
                         <input class="inp" type="text" name="name" id="name" />
                         <label for="cislo">KONTAKTNÉ TELEFÓNNE ČÍSLO:</label>
-                        <input class="inp" type="tel" name="phone" id="cislo" />
+                        <input class="inp" type="tel" name="mobile" id="cislo" />
                         <label for="mail">E-MAIL:</label>
                         <input class="inp" type="email"  name="email" id="mail" />
                     </div>
