@@ -11,10 +11,11 @@
         <br />
         <div class="pv">
             <p>
-                Vitajte v našom luxusnom amsterdamskom hoteli! Zabudovaný v srdci
-                tohto živého mesta, naša butiková ubytovňa ponúka útulné izby,
-                prvotriednu obsluhu a úchvatné výhľady na kanály. Zažite skutočnú
-                esenciu Amsterodamu s nami. Rezervujte si váš pobyt ešte dnes!
+                {{session('auth')}}
+{{--                Vitajte v našom luxusnom amsterdamskom hoteli! Zabudovaný v srdci--}}
+{{--                tohto živého mesta, naša butiková ubytovňa ponúka útulné izby,--}}
+{{--                prvotriednu obsluhu a úchvatné výhľady na kanály. Zažite skutočnú--}}
+{{--                esenciu Amsterodamu s nami. Rezervujte si váš pobyt ešte dnes!--}}
             </p>
         </div>
     </div>

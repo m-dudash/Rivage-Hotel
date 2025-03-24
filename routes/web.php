@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FaqController;
@@ -23,7 +24,6 @@ Route::get('/home',[HomeController::class, 'index'])->name('home');
 Route::post('/home', [HomeController::class, 'store'])->name('question.store');
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
-Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
 Route::get('/faq',[FaqController::class, 'index'])->name('faq');
@@ -32,8 +32,13 @@ Route::delete('/faq/{item}', [FaqController::class , 'destroy'])->name('faq.dele
 Route::put('/faq/{item}', [FaqController::class, 'update'])->name('faq.update');
 Route::get('/faq/{item}/edit', [FaqController::class, 'edit'])->name('faq.edit');
 
-Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
-Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
+Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation')->middleware('auth:sanctum');
+Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store')->middleware('auth:sanctum');
 
 Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviews');
 Route::post('/reviews', [ReviewsController::class, 'store'])->name('reviews.store');
+
+Route::get('/auth', [AuthController::class, 'showLoginForm'])->name('auth');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

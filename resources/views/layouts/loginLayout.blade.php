@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="main.php" style="margin-left: 100%;"
+                    <a class="nav-link" aria-current="page" href="{{route('home')}}" style="margin-left: 100%;"
                     ><&nbsp;&nbsp;&nbsp;Back</a
                     >
                     <span></span>

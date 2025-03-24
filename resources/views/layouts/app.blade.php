@@ -2,7 +2,7 @@
 
 {{--BY MICHAILO M. DUDASH--}}
 
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Rivage Hotel - @yield('title')</title>
@@ -61,9 +61,11 @@
                     <a class="nav-link" aria-current="page" href="{{route('reviews')}}">|&nbsp;Recenzie</a>
                     <a class="nav-link" aria-current="page" href="{{route('faq')}}">|&nbsp;FAQ</a>
 
-                    <?php
-                    $login_link = 'Profile';
-                    echo $login_link; ?>
+                    <form action="{{route('logout')}}" method="post">
+                        @csrf
+                        <button type="submit">LOGOUT </button>
+                    </form>
+
                     <span></span>
                     <a aria-current="page" href="{{route('reservation')}}" class="nav-link">
                         <span class="RB" style="position: absolute; right: 7%">| Reservation</span>
