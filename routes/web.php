@@ -24,7 +24,6 @@ Route::get('/home',[HomeController::class, 'index'])->name('home');
 Route::post('/home', [HomeController::class, 'store'])->name('question.store');
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
 Route::get('/faq',[FaqController::class, 'index'])->name('faq');
 Route::post('/faq', [FaqController::class, 'store'])->name('faq.store')->middleware(['auth:sanctum', 'role:admin']);
@@ -42,4 +41,8 @@ Route::get('/auth', [AuthController::class, 'showLoginForm'])->name('auth');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth:sanctum');
+Route::post('/profile/update-name', [ProfileController::class, 'updatePassword'])->name('update.password')->middleware('auth:sanctum');
+Route::post('/profile/update-password', [ProfileController::class, 'updateName'])->name('update.name')->middleware('auth:sanctum');
 

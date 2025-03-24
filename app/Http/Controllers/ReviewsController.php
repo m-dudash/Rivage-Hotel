@@ -19,7 +19,7 @@ class ReviewsController extends Controller
             'rating'=>'required',
             'content'=>'required'
         ]);
-        $data['user_id'] = 1;  //hardcoded
+        $data['user_id'] = auth()->user()->id;  //hardcoded
         $data['review_date'] = now()->toDateString();
 
         Review::create($data);

@@ -56,16 +56,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="{{route('home')}}">|&nbsp;O&nbsp;nás</a>
-                    <a class="nav-link" aria-current="page" href="{{route('gallery')}}">|&nbsp;Galéria</a>
-                    <a class="nav-link" aria-current="page" href="{{route('reviews')}}">|&nbsp;Recenzie</a>
-                    <a class="nav-link" aria-current="page" href="{{route('faq')}}">|&nbsp;FAQ</a>
-
-                    <form action="{{route('logout')}}" method="post">
-                        @csrf
-                        <button type="submit">LOGOUT </button>
-                    </form>
-
+                    <a class="nav-link" aria-current="page"  style="white-space: nowrap;" href="{{route('home')}}">|&nbsp;O&nbsp;nás</a>
+                    <a class="nav-link" aria-current="page" style="white-space: nowrap;" href="{{route('gallery')}}">|&nbsp;Galéria</a>
+                    <a class="nav-link" aria-current="page" style="white-space: nowrap;" href="{{route('reviews')}}">|&nbsp;Recenzie</a>
+                    <a class="nav-link" aria-current="page" style="white-space: nowrap;" href="{{route('faq')}}">|&nbsp;FAQ</a>
+                    @if(auth()->check())
+                        <a class="nav-link" style="margin-left: 14%; color: #500505; white-space: nowrap;" aria-current="page" href="{{route('profile')}}">|&nbsp;{{ auth()->check() ? (auth()->user()->name ?? auth()->user()->email) : 'MyRivage' }}</a>
+                    @else
+                        <a class="nav-link" style="margin-left: 14%; color: #500505; white-space: nowrap;" aria-current="page" href="{{route('auth')}}">|&nbsp;{{ auth()->check() ? (auth()->user()->name ?? auth()->user()->email) : 'MyRivage' }}</a>
+                    @endif
                     <span></span>
                     <a aria-current="page" href="{{route('reservation')}}" class="nav-link">
                         <span class="RB" style="position: absolute; right: 7%">| Reservation</span>
@@ -90,10 +89,10 @@
         <p>D. Portashka</p>
     </div>
     <div class="foot-a">
-        <a href="{{route('reviews')}}">|&nbsp;Recenzie</a>
-        <a href="{{route('home')}}">|&nbsp;O&nbsp;nás</a>
-        <a href="{{route('gallery')}}" target="_blank">|&nbsp;Galéria</a>
-        <a href="{{route('faq')}}">|&nbsp;FAQ</a>
+        <a style="white-space: nowrap;" href="{{route('reviews')}}">|&nbsp;Recenzie</a>
+        <a style="white-space: nowrap;" href="{{route('home')}}">|&nbsp;O&nbsp;nás</a>
+        <a style="white-space: nowrap;" href="{{route('gallery')}}" target="_blank">|&nbsp;Galéria</a>
+        <a style="white-space: nowrap;" href="{{route('faq')}}">|&nbsp;FAQ</a>
     </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
