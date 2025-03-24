@@ -43,6 +43,7 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
         $data['password'] = bcrypt($data['password']);
+        $data['role'] = 'user';
 
         $user = User::create($data);
         Auth::login($user);

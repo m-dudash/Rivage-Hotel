@@ -27,18 +27,19 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
 Route::get('/faq',[FaqController::class, 'index'])->name('faq');
-Route::post('/faq', [FaqController::class, 'store'])->name('faq.store');
-Route::delete('/faq/{item}', [FaqController::class , 'destroy'])->name('faq.delete');
-Route::put('/faq/{item}', [FaqController::class, 'update'])->name('faq.update');
-Route::get('/faq/{item}/edit', [FaqController::class, 'edit'])->name('faq.edit');
+Route::post('/faq', [FaqController::class, 'store'])->name('faq.store')->middleware(['auth:sanctum', 'role:admin']);
+Route::delete('/faq/{item}', [FaqController::class , 'destroy'])->name('faq.delete')->middleware(['auth:sanctum', 'role:admin']);
+Route::put('/faq/{item}', [FaqController::class, 'update'])->name('faq.update')->middleware(['auth:sanctum', 'role:admin']);
+Route::get('/faq/{item}/edit', [FaqController::class, 'edit'])->name('faq.edit')->middleware(['auth:sanctum', 'role:admin']);
 
 Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation')->middleware('auth:sanctum');
 Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store')->middleware('auth:sanctum');
 
 Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviews');
-Route::post('/reviews', [ReviewsController::class, 'store'])->name('reviews.store');
+Route::post('/reviews', [ReviewsController::class, 'store'])->name('reviews.store')->middleware('auth:sanctum');
 
 Route::get('/auth', [AuthController::class, 'showLoginForm'])->name('auth');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+

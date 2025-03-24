@@ -115,11 +115,15 @@
 
     <br /><br />
     <!-- KREATIVNE - NAPISAT REVIEW-->
+
     <div style="display: flex; justify-content: center">
         <a href="{{route('reviews')}}" target="_blank" class="mr-2">
             <button class="more">MORE</button>
         </a>
-        <button class="more" data-bs-toggle="modal" data-bs-target="#writeReviewModal">WRITE REVIEW</button>
+        @if(auth()->check())
+            <button class="more" data-bs-toggle="modal" data-bs-target="#writeReviewModal">WRITE REVIEW</button>
+
+        @endif
     </div>
 
     <div id="writeReviewModal" class="modal" tabindex="-1">

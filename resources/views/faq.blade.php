@@ -16,19 +16,22 @@
                 </button>
                 <!-- Кнопки Edit и Delete -->
 
-                <div class="btn-group" role="group">
+                @if(auth()->check() && auth()->user()->role == 'admin')
+                    <div class="btn-group" role="group">
 
                         <button type="submit" style="background-color: white; color: #500505;margin-right: 20px; margin-left: 20px; margin-bottom: 5px" >
                             <a href="{{route('faq.edit', $item)}}" >Edit</a>
                         </button>
 
 
-                    <form action="{{route('faq.delete', $item)}}" id="del" method="post">
-                        @csrf
-                        @method('DELETE')
-                    <button type="submit" style="margin-right: 20px; margin-left: 20px; margin-bottom: 5px;  color: aliceblue">Delete</button>
-                    </form>
-                </div>
+                        <form action="{{route('faq.delete', $item)}}" id="del" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" style="margin-right: 20px; margin-left: 20px; margin-bottom: 5px;  color: aliceblue">Delete</button>
+                        </form>
+                    </div>
+                @endif
+
 
             </h2>
             <div id="collapse{{$item->id}}" class="accordion-collapse collapse" aria-labelledby="heading{{$item->id}}" data-bs-parent="#accordionExample">
@@ -41,26 +44,31 @@
     @endforeach
 
 
-</div>
-<!-- Форма для новых вопросов -->
 
-<br><br><br>
-<div class="otazky">
-    <form action="{{route('faq.store')}}" id="otazky" method="post">
-        @csrf
-        <br>
-        <div>
-            <label for="question">NEW QUESTION:</label>
-            <input class="inp" type="text" id="question" name="question" required />
-            <br /><br />
-            <label for="answer">NEW ANSWER:</label>
-            <input class="inp" type="text" id="answer" name="answer" required />
-            <br /><br />
-            <button type="submit">POST</button>
-        </div>
-    </form>
+
 </div>
-</div>
+@if(auth()->check() &&  auth()->user()->role == 'admin')
+    <!-- Форма для новых вопросов -->
+
+    <br><br><br>
+    <div class="otazky">
+        <form action="{{route('faq.store')}}" id="otazky" method="post">
+            @csrf
+            <br>
+            <div>
+                <label for="question">NEW QUESTION:</label>
+                <input class="inp" type="text" id="question" name="question" required />
+                <br /><br />
+                <label for="answer">NEW ANSWER:</label>
+                <input class="inp" type="text" id="answer" name="answer" required />
+                <br /><br />
+                <button type="submit">POST</button>
+            </div>
+        </form>
+    </div>
+    </div>
+@endif
+
 
 <br /><br /><br /><br /><br /><br /><br /><br />
 <p class="thm" style="font-size: 200%">Your comfort is our priority</p>
