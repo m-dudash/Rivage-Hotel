@@ -70,12 +70,13 @@
             <div class="centered" style="top: 16vw">CARPATHIAN HOUSE</div>
             <img src="{{asset('images/reservation/img3.png')}}" alt="Amsterdam" />
             <div class="details">
-                <form action="reservationEngine.php" method="post">
+                <form action="{{route('reservation.store')}}" method="post">
+                    @csrf
                     <div style="display: flex; flex-direction: column">
                         <label for="name1">MENO HLAVNÉHO HOSŤA: </label>
-                        <input class="inp" type="text" id="name1" />
+                        <input class="inp" type="text" id="name1" name="name" />
                         <label for="cislo1">KONTAKTNÉ TELEFÓNNE ČÍSLO:</label>
-                        <input class="inp" type="tel" id="cislo1" name="phone" />
+                        <input class="inp" type="tel" id="cislo1" name="mobile" />
                         <label for="mail1">E-MAIL:</label>
                         <input class="inp" type="email" id="mail1" name="email" />
                     </div>
@@ -128,12 +129,13 @@
             <div class="centered" style="top: 16vw">AMSTERDAM CLASSIC</div>
             <img src="{{asset('images/reservation/img0.png')}}" alt="Amsterdam" />
             <div class="details">
-                <form action="reservationEngine.php" method="post">
+                <form action="{{route('reservation.store')}}" method="post">
+                    @csrf
                     <div style="display: flex; flex-direction: column">
                         <label for="name2">MENO HLAVNÉHO HOSŤA: </label>
                         <input class="inp" type="text" id="name2" name="name"/>
                         <label for="cislo2">KONTAKTNÉ TELEFÓNNE ČÍSLO:</label>
-                        <input class="inp" type="tel" id="cislo2" name="phone"/>
+                        <input class="inp" type="tel" id="cislo2" name="mobile"/>
                         <label for="mail2">E-MAIL:</label>
                         <input class="inp" type="email" id="mail2" name="email" />
                     </div>
@@ -186,12 +188,13 @@
             <div class="centered" style="top: 16vw">NEW WEST</div>
             <img src="{{asset('images/reservation/img2.png')}}" alt="Amsterdam" />
             <div class="details">
-                <form action="reservationEngine.php" method="post">
+                <form action="{{route('reservation.store')}}" method="post">
+                    @csrf
                     <div style="display: flex; flex-direction: column">
                         <label for="name3">MENO HLAVNÉHO HOSŤA: </label>
                         <input class="inp" type="text" id="name3" name="name"/>
                         <label for="cislo3">KONTAKTNÉ TELEFÓNNE ČÍSLO:</label>
-                        <input class="inp" type="tel" id="cislo3" name="phone"/>
+                        <input class="inp" type="tel" id="cislo3" name="mobile"/>
                         <label for="mail3">E-MAIL:</label>
                         <input class="inp" type="email" id="mail3" name="email"/>
                     </div>
